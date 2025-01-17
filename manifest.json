@@ -3,12 +3,19 @@
   "description": "Maximize your rabbit holes",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["tabs"],
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "scripting",
+    "storage",
+    "readingList"
+  ],
+  "action": {
+    "default_title": "Curiosity"
+  },
+  "options_page": "options.html",
   "background": {
     "service_worker": "background.js"
-  },
-  "action": {
-    "default_popup": "popup.html"
   },
   "commands": {
     "create-search-tab": {
@@ -16,6 +23,18 @@
         "default": "Alt+T"
       },
       "description": "Create a new search tab"
+    },
+    "search-on-exa": {
+      "suggested_key": {
+        "default": "Alt+E"
+      },
+      "description": "Search on Exa"
+    },
+    "add-to-reading-list": {
+      "suggested_key": {
+        "default": "Alt+R"
+      },
+      "description": "Add to reading list"
     }
   }
 }
